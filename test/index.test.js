@@ -20,7 +20,7 @@ describe('#indexOf()', function () {
         src,
         dest,
         command,
-        switches,
+        switches
       });
       assert(result === 'over');
 

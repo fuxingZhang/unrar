@@ -31,6 +31,8 @@ const switches = ['-o+', '-idcd'];
 })().catch(console.error);
 ```  
 
+Use stream examples in the `test/stream.test.js`.
+
 ## Definitions  
 ```ts
 export interface Options {
@@ -121,7 +123,6 @@ Usage:     unrar <command> -<switch 1> -<switch N> <archive> <files...>
 ```
 
 ## Test
-
 ```sh
 $ npm test
 ```  

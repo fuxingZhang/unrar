@@ -1,10 +1,10 @@
 {
   "name": "@zhangfuxing/unrar",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "uncompress rar file",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/index.test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

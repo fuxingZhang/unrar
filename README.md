@@ -7,6 +7,8 @@ uncompress rar file
 $ npm i @zhangfuxing/unrar
 ```  
 
+Node.js 12+ required (Because of use Class private fields)
+
 ## Useage  
 
 ```js

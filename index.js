@@ -1,10 +1,6 @@
 'use strict';
-
-const child_process = require('child_process');
-const spawn = child_process.spawn;
+const spawn = require('./lib/spawn');
 const EventEmitter = require('events');
-const path = require('path');
-const bin = path.join(__dirname, './bin/UnRAR.exe');
 const reg_progress = /([\d]+)%/;
 const reg_password = /^\r\nEnter password \(will not be echoed\)/;
 
@@ -20,7 +16,7 @@ class Unrar extends EventEmitter {
     let errMsg = '';
 
     return new Promise((resolve, reject) => {
-      const unrar = spawn(bin, [
+      const unrar = spawn([
         command,
         ...switches,
         src,
@@ -35,7 +31,7 @@ class Unrar extends EventEmitter {
 
       unrar.stderr.on('data', chunk => {
         const data = chunk.toString();
-        if(reg_password.test(data)) {
+        if (reg_password.test(data)) {
           unrar.kill();
           const error = new Error('Password protected file');
           return reject(error);

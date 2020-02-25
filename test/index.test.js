@@ -62,4 +62,28 @@ describe('unrar without stream', function () {
       assert(false);
     }
   });
+
+  it('should throw error when opening password protected file without providing password', async () => {
+    const src = path.join(__dirname, './password.rar');
+    const dest = __dirname;
+    const command = 'e';
+    const switches = ['-o+', '-idcd'];
+
+    try {
+      unrar.on('progress', percent => {
+        assert(percent.includes('%'));
+      });
+
+      await unrar.uncompress({
+        src,
+        dest,
+        command,
+        switches
+      });
+
+      assert(false);
+    } catch (error) {
+      assert(error.message === 'Password protected file');
+    }
+  });
 });

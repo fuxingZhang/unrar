@@ -1,6 +1,6 @@
 {
   "name": "@zhangfuxing/unrar",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "uncompress rar file",
   "main": "index.js",
   "scripts": {
